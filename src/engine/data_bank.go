@@ -2,7 +2,7 @@ package engine
 
 import "loba/src/loba"
 
-type CardSlot struct {
+type CardPredicts struct {
 	Card loba.Card
 
 	// Contains all the probabilities of each player having the card
@@ -11,5 +11,9 @@ type CardSlot struct {
 }
 
 type DataBank struct {
-	Cards map[loba.Card]CardSlot
+	CardPredictions map[loba.Card]CardPredicts
+	CardsOnDeck     uint16
+	CardsOnDiscard  uint16
+	JokerCount      uint16
+	Stats           []PlayerStats
 }
